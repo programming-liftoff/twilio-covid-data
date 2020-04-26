@@ -13,8 +13,8 @@ const states = [
 
 const getData = async function (context, event, callback) {
   const response = {};
-  const location = event.location.trim().toLowerCase();
-  const states_or_countries = states.includes(location) ? 'states' : 'countries';
+  const location = event.location.trim();
+  const states_or_countries = states.includes(location.toLowerCase()) ? 'states' : 'countries';
   try {
     const res = await axios.get(`https://corona.lmao.ninja/v2/${states_or_countries}/${location}`);
     const { cases, deaths } = res.data;
