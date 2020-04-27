@@ -21,7 +21,7 @@ const getData = async function (context, event, callback) {
     response.message = `There have been ${Number(cases).toLocaleString()} cases and ` +
                        `${Number(deaths).toLocaleString()} deaths in ${location}.`;
   } catch {
-    response.message = `Error retrieving data for ${location}. Please send either a state or country`;
+    response.message = `Error retrieving data for ${location}. Please send either a state or country.`;
   }
 
   callback(null, response);
