@@ -11,7 +11,7 @@ const states = [
   'virginia', 'washington', 'west virginia', 'wisconsin', 'wyoming'
 ];
 
-const getData = async function (context, event, callback) {
+exports.handler = async function (context, event, callback) {
   const response = {};
   const location = event.location.trim();
   const states_or_countries = states.includes(location.toLowerCase()) ? 'states' : 'countries';
@@ -26,5 +26,3 @@ const getData = async function (context, event, callback) {
 
   callback(null, response);
 };
-
-exports.handler = getData;
